@@ -1,4 +1,5 @@
 ﻿using ClassLibrary.Adapter;
+using ClassLibrary.Polymorphism;
 using System;
 using Bird = ClassLibrary.Inheritance.Bird;
 
@@ -8,13 +9,29 @@ namespace MustKnow.NetV2
     {
         static void Main(string[] args)
         {
+
+            LoadManager loadManager = new LoadManager();
+            loadManager.LoadFiles(new WordFile());
+            loadManager.LoadFiles(new JpgFile());
+
+            foreach (Files file in loadManager.Files)
+            {
+                loadManager.OpenFile(file);
+            }
+
+            Console.WriteLine("=========================================");
+
+            #region Adapter
+
             BirdAdapter birdAdapter = new BirdAdapter(new Chicken());
             birdAdapter.ToTweet();
             birdAdapter.ShowType();
 
-            BirdAdapter ba = new BirdAdapter(new ClassLibrary.Adapter.Eagle());
+            BirdAdapter ba = new BirdAdapter(new Eagle());
             ba.ShowType();
             ba.ToTweet();
+
+            #endregion
 
             Console.WriteLine("=========================================");
 
