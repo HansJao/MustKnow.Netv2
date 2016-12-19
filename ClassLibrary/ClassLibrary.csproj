@@ -45,6 +45,7 @@
     <Compile Include="Inheritance\Animal.cs" />
     <Compile Include="Polymorphism\Files.cs" />
     <Compile Include="Polymorphism\IFileOpen.cs" />
+    <Compile Include="Polymorphism\JpgFile.cs" />
     <Compile Include="Polymorphism\LoadManager.cs" />
     <Compile Include="Polymorphism\WordFile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
