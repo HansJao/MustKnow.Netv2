@@ -1,7 +1,7 @@
 ﻿using ClassLibrary.Adapter;
+using ClassLibrary.Polymorphism;
 using System;
 using Bird = ClassLibrary.Inheritance.Bird;
-using ClassLibrary.Polymorphism;
 
 namespace MustKnow.NetV2
 {
@@ -12,6 +12,7 @@ namespace MustKnow.NetV2
 
             LoadManager loadManager = new LoadManager();
             loadManager.LoadFiles(new WordFile());
+            loadManager.LoadFiles(new JpgFile());
 
             foreach (Files file in loadManager.Files)
             {
