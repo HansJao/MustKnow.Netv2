@@ -1,5 +1,6 @@
 ﻿using ClassLibrary.Adapter;
 using ClassLibrary.Polymorphism;
+using ClassLibrary.Proxy;
 using System;
 using Bird = ClassLibrary.Inheritance.Bird;
 
@@ -10,6 +11,17 @@ namespace MustKnow.NetV2
         static void Main(string[] args)
         {
 
+            #region Proxy 單一職責原則
+
+            IDBAction dbManager = new DBManagerProxy(new DBManager(), 123);
+            dbManager.Add();
+
+            #endregion
+
+            Console.WriteLine("=========================================");
+
+            #region Polymorphism
+
             LoadManager loadManager = new LoadManager();
             loadManager.LoadFiles(new WordFile());
             loadManager.LoadFiles(new JpgFile());
@@ -18,6 +30,8 @@ namespace MustKnow.NetV2
             {
                 loadManager.OpenFile(file);
             }
+
+            #endregion
 
             Console.WriteLine("=========================================");
 
