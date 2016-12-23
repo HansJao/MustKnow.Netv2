@@ -41,8 +41,21 @@
   <ItemGroup>
     <Compile Include="Adapter\Bird.cs" />
     <Compile Include="Class.cs" />
+    <Compile Include="DIP\DepositClient.cs" />
+    <Compile Include="DIP\DrawMoneyClient.cs" />
+    <Compile Include="DIP\EasyBankStaff.cs" />
+    <Compile Include="DIP\BankClient.cs" />
+    <Compile Include="DIP\DepositProcessing.cs" />
+    <Compile Include="DIP\DrawMoneyProcessing.cs" />
+    <Compile Include="DIP\IBankClient.cs" />
+    <Compile Include="DIP\IBankProcess.cs" />
     <Compile Include="Encapsulation\ATM.cs" />
     <Compile Include="Inheritance\Animal.cs" />
+    <Compile Include="OCP\BankStaff.cs" />
+    <Compile Include="OCP\Client.cs" />
+    <Compile Include="OCP\DepositProcess.cs" />
+    <Compile Include="OCP\DrawMoneyProcess.cs" />
+    <Compile Include="OCP\IProcess.cs" />
     <Compile Include="Polymorphism\Files.cs" />
     <Compile Include="Polymorphism\IFileOpen.cs" />
     <Compile Include="Polymorphism\JpgFile.cs" />
@@ -53,7 +66,9 @@
     <Compile Include="Proxy\DBManagerProxy.cs" />
     <Compile Include="Proxy\IDBAction.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

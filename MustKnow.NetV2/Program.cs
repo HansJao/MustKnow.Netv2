@@ -1,4 +1,6 @@
 ﻿using ClassLibrary.Adapter;
+using ClassLibrary.DIP;
+using ClassLibrary.OCP;
 using ClassLibrary.Polymorphism;
 using ClassLibrary.Proxy;
 using System;
@@ -10,6 +12,20 @@ namespace MustKnow.NetV2
     {
         static void Main(string[] args)
         {
+            EasyBankStaff easyBankStaff = new EasyBankStaff();
+            easyBankStaff.HandleProcess(new DepositClient());
+
+            Console.WriteLine("=========================================");
+
+            #region 開放封閉原則
+
+            BankStaff bankStaff = new BankStaff();
+            bankStaff.HandleProcess(new Client("領錢"));
+            bankStaff.HandleProcess(new Client("存錢"));
+
+            #endregion
+
+            Console.WriteLine("=========================================");
 
             #region Proxy 單一職責原則
 
